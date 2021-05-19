@@ -15,7 +15,36 @@
 		0E74FD89264DA21E00391313 /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E74FD88264DA21E00391313 /* MobileRTCResources.bundle */; };
 		0E74FD8C264DA26100391313 /* MobileRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E74FD86264DA1F500391313 /* MobileRTC.xcframework */; };
 		0E74FD8D264DA26100391313 /* MobileRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0E74FD86264DA1F500391313 /* MobileRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EFB4CE6326553F2E00777788 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE6226553F2E00777788 /* ReplayKit.framework */; };
+		EFB4CE6626553F2E00777788 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB4CE6526553F2E00777788 /* SampleHandler.swift */; };
+		EFB4CE6D26553F2E00777788 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE6226553F2E00777788 /* ReplayKit.framework */; };
+		EFB4CE6F26553F2E00777788 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE6E26553F2E00777788 /* UIKit.framework */; };
+		EFB4CE7226553F2E00777788 /* BroadcastSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB4CE7126553F2E00777788 /* BroadcastSetupViewController.swift */; };
+		EFB4CE7626553F2E00777788 /* ScreenShareSetupUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EFB4CE6C26553F2E00777788 /* ScreenShareSetupUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EFB4CE7926553F2E00777788 /* ScreenShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EFB4CE6026553F2E00777788 /* ScreenShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EFB4CE81265540BD00777788 /* MobileRTCScreenShare.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E74FD8A264DA24B00391313 /* MobileRTCScreenShare.xcframework */; };
+		EFB4CE852655411D00777788 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE842655411D00777788 /* CoreVideo.framework */; };
+		EFB4CE872655412A00777788 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE862655412A00777788 /* CoreGraphics.framework */; };
+		EFB4CE892655413200777788 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE882655413200777788 /* CoreMedia.framework */; };
+		EFB4CE8B2655413B00777788 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE8A2655413B00777788 /* VideoToolbox.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EFB4CE7426553F2E00777788 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E74FD4B264DA11900391313 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFB4CE6B26553F2E00777788;
+			remoteInfo = ScreenShareSetupUI;
+		};
+		EFB4CE7726553F2E00777788 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E74FD4B264DA11900391313 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFB4CE5F26553F2E00777788;
+			remoteInfo = ScreenShare;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		0E74FD8E264DA26200391313 /* Embed Frameworks */ = {
@@ -27,6 +56,18 @@
 				0E74FD8D264DA26100391313 /* MobileRTC.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFB4CE8026553F2E00777788 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EFB4CE7926553F2E00777788 /* ScreenShare.appex in Embed App Extensions */,
+				EFB4CE7626553F2E00777788 /* ScreenShareSetupUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -46,6 +87,18 @@
 		0E74FD86264DA1F500391313 /* MobileRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTC.xcframework; sourceTree = "<group>"; };
 		0E74FD88264DA21E00391313 /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobileRTCResources.bundle; sourceTree = "<group>"; };
 		0E74FD8A264DA24B00391313 /* MobileRTCScreenShare.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTCScreenShare.xcframework; sourceTree = "<group>"; };
+		EFB4CE6026553F2E00777788 /* ScreenShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScreenShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFB4CE6226553F2E00777788 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		EFB4CE6526553F2E00777788 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		EFB4CE6726553F2E00777788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFB4CE6C26553F2E00777788 /* ScreenShareSetupUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScreenShareSetupUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFB4CE6E26553F2E00777788 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EFB4CE7126553F2E00777788 /* BroadcastSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastSetupViewController.swift; sourceTree = "<group>"; };
+		EFB4CE7326553F2E00777788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFB4CE842655411D00777788 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		EFB4CE862655412A00777788 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EFB4CE882655413200777788 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		EFB4CE8A2655413B00777788 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +107,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E74FD8C264DA26100391313 /* MobileRTC.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFB4CE5D26553F2E00777788 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFB4CE872655412A00777788 /* CoreGraphics.framework in Frameworks */,
+				EFB4CE81265540BD00777788 /* MobileRTCScreenShare.xcframework in Frameworks */,
+				EFB4CE8B2655413B00777788 /* VideoToolbox.framework in Frameworks */,
+				EFB4CE6326553F2E00777788 /* ReplayKit.framework in Frameworks */,
+				EFB4CE852655411D00777788 /* CoreVideo.framework in Frameworks */,
+				EFB4CE892655413200777788 /* CoreMedia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFB4CE6926553F2E00777788 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFB4CE6D26553F2E00777788 /* ReplayKit.framework in Frameworks */,
+				EFB4CE6F26553F2E00777788 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +144,9 @@
 				0E74FD55264DA11900391313 /* ZoomToy */,
 				0E74FD6C264DA11B00391313 /* ZoomToyTests */,
 				0E74FD77264DA11B00391313 /* ZoomToyUITests */,
+				EFB4CE6426553F2E00777788 /* ScreenShare */,
+				EFB4CE7026553F2E00777788 /* ScreenShareSetupUI */,
+				EFB4CE6126553F2E00777788 /* Frameworks */,
 				0E74FD54264DA11900391313 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				0E74FD53264DA11900391313 /* ZoomToy.app */,
+				EFB4CE6026553F2E00777788 /* ScreenShare.appex */,
+				EFB4CE6C26553F2E00777788 /* ScreenShareSetupUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +192,37 @@
 			path = ZoomToyUITests;
 			sourceTree = "<group>";
 		};
+		EFB4CE6126553F2E00777788 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFB4CE8A2655413B00777788 /* VideoToolbox.framework */,
+				EFB4CE882655413200777788 /* CoreMedia.framework */,
+				EFB4CE862655412A00777788 /* CoreGraphics.framework */,
+				EFB4CE842655411D00777788 /* CoreVideo.framework */,
+				EFB4CE6226553F2E00777788 /* ReplayKit.framework */,
+				EFB4CE6E26553F2E00777788 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFB4CE6426553F2E00777788 /* ScreenShare */ = {
+			isa = PBXGroup;
+			children = (
+				EFB4CE6526553F2E00777788 /* SampleHandler.swift */,
+				EFB4CE6726553F2E00777788 /* Info.plist */,
+			);
+			path = ScreenShare;
+			sourceTree = "<group>";
+		};
+		EFB4CE7026553F2E00777788 /* ScreenShareSetupUI */ = {
+			isa = PBXGroup;
+			children = (
+				EFB4CE7126553F2E00777788 /* BroadcastSetupViewController.swift */,
+				EFB4CE7326553F2E00777788 /* Info.plist */,
+			);
+			path = ScreenShareSetupUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,15 +234,52 @@
 				0E74FD50264DA11900391313 /* Frameworks */,
 				0E74FD51264DA11900391313 /* Resources */,
 				0E74FD8E264DA26200391313 /* Embed Frameworks */,
+				EFB4CE8026553F2E00777788 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EFB4CE7526553F2E00777788 /* PBXTargetDependency */,
+				EFB4CE7826553F2E00777788 /* PBXTargetDependency */,
 			);
 			name = ZoomToy;
 			productName = ZoomToy;
 			productReference = 0E74FD53264DA11900391313 /* ZoomToy.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EFB4CE5F26553F2E00777788 /* ScreenShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFB4CE7D26553F2E00777788 /* Build configuration list for PBXNativeTarget "ScreenShare" */;
+			buildPhases = (
+				EFB4CE5C26553F2E00777788 /* Sources */,
+				EFB4CE5D26553F2E00777788 /* Frameworks */,
+				EFB4CE5E26553F2E00777788 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenShare;
+			productName = ScreenShare;
+			productReference = EFB4CE6026553F2E00777788 /* ScreenShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		EFB4CE6B26553F2E00777788 /* ScreenShareSetupUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFB4CE7A26553F2E00777788 /* Build configuration list for PBXNativeTarget "ScreenShareSetupUI" */;
+			buildPhases = (
+				EFB4CE6826553F2E00777788 /* Sources */,
+				EFB4CE6926553F2E00777788 /* Frameworks */,
+				EFB4CE6A26553F2E00777788 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenShareSetupUI;
+			productName = ScreenShareSetupUI;
+			productReference = EFB4CE6C26553F2E00777788 /* ScreenShareSetupUI.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -143,6 +291,12 @@
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					0E74FD52264DA11900391313 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					EFB4CE5F26553F2E00777788 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					EFB4CE6B26553F2E00777788 = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
@@ -161,6 +315,8 @@
 			projectRoot = "";
 			targets = (
 				0E74FD52264DA11900391313 /* ZoomToy */,
+				EFB4CE5F26553F2E00777788 /* ScreenShare */,
+				EFB4CE6B26553F2E00777788 /* ScreenShareSetupUI */,
 			);
 		};
 /* End PBXProject section */
@@ -177,6 +333,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EFB4CE5E26553F2E00777788 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFB4CE6A26553F2E00777788 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -189,7 +359,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EFB4CE5C26553F2E00777788 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFB4CE6626553F2E00777788 /* SampleHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFB4CE6826553F2E00777788 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFB4CE7226553F2E00777788 /* BroadcastSetupViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EFB4CE7526553F2E00777788 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFB4CE6B26553F2E00777788 /* ScreenShareSetupUI */;
+			targetProxy = EFB4CE7426553F2E00777788 /* PBXContainerItemProxy */;
+		};
+		EFB4CE7826553F2E00777788 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFB4CE5F26553F2E00777788 /* ScreenShare */;
+			targetProxy = EFB4CE7726553F2E00777788 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E74FD5C264DA11900391313 /* Main.storyboard */ = {
@@ -332,6 +531,7 @@
 		0E74FD7E264DA11B00391313 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -354,6 +554,7 @@
 		0E74FD7F264DA11B00391313 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -370,6 +571,90 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EFB4CE7B26553F2E00777788 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5SBANBX2DG;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ScreenShareSetupUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abhishek.ZoomToy.ScreenShareSetupUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EFB4CE7C26553F2E00777788 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5SBANBX2DG;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ScreenShareSetupUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abhishek.ZoomToy.ScreenShareSetupUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EFB4CE7E26553F2E00777788 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5SBANBX2DG;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ScreenShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abhishek.ZoomToy.ScreenShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EFB4CE7F26553F2E00777788 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5SBANBX2DG;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ScreenShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abhishek.ZoomToy.ScreenShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -390,6 +675,24 @@
 			buildConfigurations = (
 				0E74FD7E264DA11B00391313 /* Debug */,
 				0E74FD7F264DA11B00391313 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFB4CE7A26553F2E00777788 /* Build configuration list for PBXNativeTarget "ScreenShareSetupUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFB4CE7B26553F2E00777788 /* Debug */,
+				EFB4CE7C26553F2E00777788 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFB4CE7D26553F2E00777788 /* Build configuration list for PBXNativeTarget "ScreenShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFB4CE7E26553F2E00777788 /* Debug */,
+				EFB4CE7F26553F2E00777788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
