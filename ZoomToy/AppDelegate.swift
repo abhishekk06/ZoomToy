@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         context.domain = "zoom.us"
         // Turns on SDK logging. This is optional.
         context.enableLog = true
+        context.appGroupId = "group.kumarab3.ZoomToy"
 
         // Call initialize(_ context: MobileRTCSDKInitContext) to create an instance of the Zoom SDK. Without initialization, the SDK will not be operational. This call will return true if the SDK was initialized successfully.
         let sdkInitializedSuccessfully = MobileRTC.shared().initialize(context)
