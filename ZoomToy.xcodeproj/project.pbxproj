@@ -27,6 +27,7 @@
 		EFB4CE872655412A00777788 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE862655412A00777788 /* CoreGraphics.framework */; };
 		EFB4CE892655413200777788 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE882655413200777788 /* CoreMedia.framework */; };
 		EFB4CE8B2655413B00777788 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE8A2655413B00777788 /* VideoToolbox.framework */; };
+		EFB4CEA6265C9F6900777788 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = EFB4CEA5265C9F6900777788 /* SocketIO */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E74FD8C264DA26100391313 /* MobileRTC.xcframework in Frameworks */,
+				EFB4CEA6265C9F6900777788 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +253,9 @@
 				EFB4CE7826553F2E00777788 /* PBXTargetDependency */,
 			);
 			name = ZoomToy;
+			packageProductDependencies = (
+				EFB4CEA5265C9F6900777788 /* SocketIO */,
+			);
 			productName = ZoomToy;
 			productReference = 0E74FD53264DA11900391313 /* ZoomToy.app */;
 			productType = "com.apple.product-type.application";
@@ -320,6 +325,9 @@
 				Base,
 			);
 			mainGroup = 0E74FD4A264DA11900391313;
+			packageReferences = (
+				EFB4CEA4265C9F6800777788 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
+			);
 			productRefGroup = 0E74FD54264DA11900391313 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -724,6 +732,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EFB4CEA4265C9F6800777788 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EFB4CEA5265C9F6900777788 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB4CEA4265C9F6800777788 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0E74FD4B264DA11900391313 /* Project object */;
 }
