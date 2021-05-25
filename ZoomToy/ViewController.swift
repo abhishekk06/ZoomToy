@@ -90,11 +90,22 @@ class SocketTutorialManager{
     }
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,SocketPositionManagerDelegate {
+    func didConnect() {
+        print("Connect")
+    }
+    
+    func didReceive(position: SocketPosition) {
+        let element = UIView(frame: CGRect(x:0, y:0, width: 50, height: 50))
+        element.backgroundColor = UIColor.red
+        element.center = CGPoint(x: position.x, y: position.y)
+        self.view.addSubview(element)
+    }
+    
         
     let meetingNo = "Your Meeting Number"
     let kSDKUserName = ""
-    //weak var delegate: SocketPositionManagerDelegate
+    //weak var delegate?: SocketPositionManagerDelegate
     
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -115,6 +126,10 @@ class ViewController: UIViewController {
         }
         
         //var socket = SocketTutorialManager(delegate)
+        /*let element = UIView(frame: CGRect(x:0, y:0, width: 10, height: 10))
+        element.backgroundColor = UIColor.red
+        element.center = CGPoint(x: 170, y: 770)
+        self.view.addSubview(element)*/
         //----------Sample example-------------------//
         /*let manager = SocketManager(socketURL: URL(string: "https://socket-io-whiteboard.now.sh")!, config: [.log(true), .compress])
         let socket = manager.defaultSocket
@@ -165,7 +180,8 @@ func joinMeeting(meetingNumber: String) {
 }
 
 func didReceive(point: SocketPosition) {
-  let element = UIView(frame: CGRect(x:0, y:0, width: 100, height: 100))
+  let element = UIView(frame: CGRect(x:0, y:0, width: 50, height: 50))
   element.backgroundColor = UIColor.red
   element.center = CGPoint(x: point.x, y: point.y)
+   //self.view.addSubview(element)
 }
