@@ -15,8 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Obtain your SDK Key and SDK Secret and paste it here.
     // Your SDK Secret should never be publicly accessible, only use the sdk key and secret for testing this demo app.
     // For a production level application, you must generate a JWT using SDK Key and Secret securely instead of using the SDK Key and SDK Secret directly on the client.
-    let sdkKey = "jvJggFAi3scx9LGmmFvCXPkNCnPEmNHXKO9w"
-    let sdkSecret = "k1akN1NzJ1g5PD8NWbLn2lUxtcwDbzoQQFxG"
+    let sdkKey = "Key"
+    let sdkSecret = "Secret"
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
