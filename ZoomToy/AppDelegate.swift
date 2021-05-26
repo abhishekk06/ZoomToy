@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        setupSDK(sdkKey: sdkKey, sdkSecret: sdkSecret)
+//        setupSDK(sdkKey: sdkKey, sdkSecret: sdkSecret)
 
         return true
     }
