@@ -7,105 +7,14 @@
 
 import UIKit
 import MobileRTC
-import SocketIO
 
-class SocketParser {
-
-    static func convert<T: Decodable>(data: Any) throws -> T {
-        let jsonData = try JSONSerialization.data(withJSONObject: data)
-        let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: jsonData)
-    }
-
-    static func convert<T: Decodable>(datas: [Any]) throws -> [T] {
-        return try datas.map { (dict) -> T in
-            let jsonData = try JSONSerialization.data(withJSONObject: dict)
-            let decoder = JSONDecoder()
-            return try decoder.decode(T.self, from: jsonData)
-        }
-    }
-
-}
-
-struct SocketPosition: Codable {
-    var x: Double
-    var y: Double
-}
-
-protocol SocketPositionManagerDelegate: class {
-    func didConnect()
-    func didReceive(position: SocketPosition)
-}
-
-class SocketTutorialManager{
-
-    // MARK: - Delegate
-    weak var delegate: SocketPositionManagerDelegate?
-
-    // MARK: - Properties
-    let manager = SocketManager(socketURL: URL(string: "https://socket-io-whiteboard.now.sh")!, config: [.log(true), .compress])
-    var socket: SocketIOClient? = nil
-
-    // MARK: - Life Cycle
-    init(_ delegate: SocketPositionManagerDelegate) {
-        self.delegate = delegate
-        setupSocket()
-        setupSocketEvents()
-        socket?.connect()
-    }
-
-    func stop() {
-        socket?.removeAllHandlers()
-    }
-
-    // MARK: - Socket Setups
-    func setupSocket() {
-        self.socket = manager.defaultSocket
-    }
-
-    
-    func setupSocketEvents() {
-
-           socket?.on(clientEvent: .connect) {data, ack in
-               self.delegate?.didConnect()
-           }
-
-           socket?.on("drawing") { (data, ack) in
-               guard let dataInfo = data.first else { return }
-               if let response: SocketPosition = try? SocketParser.convert(data: dataInfo) {
-                let position = SocketPosition.init(x: response.x, y: response.y)
-                self.delegate?.didReceive(position: position)
-               }
-           }
-
-       }
-
-    // MARK: - Socket Emits
-    func socketChanged(position: SocketPosition) {
-        let info: [String : Any] = [
-            "x": Double(position.x),
-            "y": Double(position.y)
-        ]
-        socket?.emit("drawing", info)
-    }
-}
-
-class ViewController: UIViewController,SocketPositionManagerDelegate {
-    func didConnect() {
-        print("Connect")
-    }
-    
-    func didReceive(position: SocketPosition) {
-        let element = UIView(frame: CGRect(x:0, y:0, width: 50, height: 50))
-        element.backgroundColor = UIColor.red
-        element.center = CGPoint(x: position.x, y: position.y)
-        self.view.addSubview(element)
-    }
-    
+class ViewController: UIViewController {
         
     let meetingNo = "Your Meeting Number"
     let kSDKUserName = ""
     //weak var delegate?: SocketPositionManagerDelegate
+    
+    var socket: SocketTutorialManager!
     
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -124,41 +33,47 @@ class ViewController: UIViewController,SocketPositionManagerDelegate {
                 print("onJoinMeeting, response: \(response)")
             }
         }
-        
-        //var socket = SocketTutorialManager(delegate)
-        /*let element = UIView(frame: CGRect(x:0, y:0, width: 10, height: 10))
+    }
+    
+    func connectToSocket() {
+        self.socket = SocketTutorialManager(self)
+        let element = UIView(frame: CGRect(x:0, y:0, width: 10, height: 10))
         element.backgroundColor = UIColor.red
         element.center = CGPoint(x: 170, y: 770)
-        self.view.addSubview(element)*/
-        //----------Sample example-------------------//
-        /*let manager = SocketManager(socketURL: URL(string: "https://socket-io-whiteboard.now.sh")!, config: [.log(true), .compress])
-        let socket = manager.defaultSocket
-
-        socket.on(clientEvent: .connect) {data, ack in
-            print("socket connected")
-        }
-        
-        socket.on("drawing") { (data, ack) in
-            guard let dataInfo = data.first else { return }
-            if let response: SocketPosition = try? SocketParser.convert(data: dataInfo) {
-             let position = SocketPosition.init(x: response.x, y: response.y)
-             didReceive(point: position)
-            }
-        }
-        socket.connect()*/
-        //----------Sample example-------------------//
+        self.view.addSubview(element)
     }
     
     @IBAction func ConnecttoServerButtonPressed(_ sender: Any) {
+        //Socket connect
+        self.connectToSocket()
+        
+        // Zoom connect
         let meetingNum = "9967655297272"
         joinMeeting(meetingNumber: meetingNum)
     }
 }
 
-extension ViewController: MobileRTCMeetingServiceDelegate{
+extension ViewController: SocketPositionManagerDelegate {
+    
+    func didConnect() {
+        print("Connect")
+    }
+    
+    func didReceive(position: SocketPosition) {
+        let element = UIView(frame: CGRect(x:0, y:0, width: 50, height: 50))
+        element.backgroundColor = UIColor.red
+        element.center = CGPoint(x: position.x, y: position.y)
+        self.view.addSubview(element)
+    }
+    
+}
+
+extension ViewController: MobileRTCMeetingServiceDelegate {
+    
     func onMeetingStateChange(_ state: MobileRTCMeetingState) {
        print("\(state)")
     }
+    
 }
 
 
@@ -177,11 +92,4 @@ func joinMeeting(meetingNumber: String) {
             // If the meeting number and meeting password are valid, the user will be put into the meeting. A waiting room UI will be presented or the meeting UI will be presented.
             meetingService.joinMeeting(with: joinMeetingParameters)
         }
-}
-
-func didReceive(point: SocketPosition) {
-  let element = UIView(frame: CGRect(x:0, y:0, width: 50, height: 50))
-  element.backgroundColor = UIColor.red
-  element.center = CGPoint(x: point.x, y: point.y)
-   //self.view.addSubview(element)
 }

@@ -15,6 +15,7 @@
 		0E74FD89264DA21E00391313 /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E74FD88264DA21E00391313 /* MobileRTCResources.bundle */; };
 		0E74FD8C264DA26100391313 /* MobileRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E74FD86264DA1F500391313 /* MobileRTC.xcframework */; };
 		0E74FD8D264DA26100391313 /* MobileRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0E74FD86264DA1F500391313 /* MobileRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1C56E5C265E843B0054B3F2 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C56E5B265E843B0054B3F2 /* SocketManager.swift */; };
 		EFB4CE6326553F2E00777788 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE6226553F2E00777788 /* ReplayKit.framework */; };
 		EFB4CE6626553F2E00777788 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB4CE6526553F2E00777788 /* SampleHandler.swift */; };
 		EFB4CE6D26553F2E00777788 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB4CE6226553F2E00777788 /* ReplayKit.framework */; };
@@ -88,6 +89,7 @@
 		0E74FD86264DA1F500391313 /* MobileRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTC.xcframework; sourceTree = "<group>"; };
 		0E74FD88264DA21E00391313 /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobileRTCResources.bundle; sourceTree = "<group>"; };
 		0E74FD8A264DA24B00391313 /* MobileRTCScreenShare.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTCScreenShare.xcframework; sourceTree = "<group>"; };
+		E1C56E5B265E843B0054B3F2 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		EFB4CE6026553F2E00777788 /* ScreenShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScreenShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB4CE6226553F2E00777788 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 		EFB4CE6526553F2E00777788 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				EFB4CEA22657E95500777788 /* ZoomToy.entitlements */,
 				0E74FD56264DA11900391313 /* AppDelegate.swift */,
 				0E74FD5A264DA11900391313 /* ViewController.swift */,
+				E1C56E5B265E843B0054B3F2 /* SocketManager.swift */,
 				0E74FD5C264DA11900391313 /* Main.storyboard */,
 				0E74FD5F264DA11A00391313 /* Assets.xcassets */,
 				0E74FD61264DA11A00391313 /* LaunchScreen.storyboard */,
@@ -373,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E74FD5B264DA11900391313 /* ViewController.swift in Sources */,
+				E1C56E5C265E843B0054B3F2 /* SocketManager.swift in Sources */,
 				0E74FD57264DA11900391313 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
